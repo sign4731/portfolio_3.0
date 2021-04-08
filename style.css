@@ -1,6 +1,9 @@
+/* General */
+
 * {
   margin: 0;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -9,22 +12,59 @@ h1 {
   font-size: 1.7rem;
 }
 
+h2 {
+  font-family: "Nova Round", cursive;
+  color: #c09fe0;
+  font-size: 3rem;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
 p {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
+  color: white;
+  margin: 5px;
 }
 
-ul {
+h3 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  color: white;
+  margin: 5px;
+  font-size: 1.7rem;
+}
+
+.panel {
+  margin-top: -100px;
+  /* height: 100vh; */
+  width: 100vw;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  background-image: url(svg/logo.svg);
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  margin: 5px 15px;
+}
+
+nav ul {
   display: flex;
   justify-content: flex-end;
 }
 
-li {
+nav li {
   font-family: "Nova Round", cursive;
   color: #c09fe0;
   font-size: 1rem;
   list-style-type: none;
-  margin: 5px;
+  margin: 15px;
 }
 
 a {
@@ -37,10 +77,11 @@ a::after {
   text-decoration: none;
 }
 
+/* Splash */
+
 .splash {
-  height: 90vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -50,28 +91,226 @@ a::after {
   text-align: center;
 }
 
+/* Section one */
+
 #section_one {
-  /* background-color: #404161; */
-  background-image: url(wave_one.svg);
+  background-image: url(svg/wave_one.svg);
   background-size: cover;
+  padding: 150px 0 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
+
+#section_one .work_wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 50px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+#section_one article {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#section_one img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overlay h3,
+.overlay p {
+  text-align: center;
+}
+
+.overlay button {
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 2px solid #c09fe0;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 15px auto;
+  font-family: "Nunito", sans-serif;
+}
+
+.overlay button:hover {
+  background-color: #c09fe0;
+  transition: 0.3s;
+}
+
+/* Section two */
 
 #section_two {
-  /* background-color: #564964; */
-  background-color: #404161;
-  background-image: url(wave_two.svg);
+  /* background-color: #404161; */
+  background-image: url(svg/wave_two.svg);
+  background-size: cover;
+  padding: 150px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.me_img_container {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-image: url(img/mememe_purplebackground.png);
+  background-position: center;
   background-size: cover;
 }
+
+.textwrapper {
+  width: 300px;
+  margin-top: 50px;
+}
+
+.textwrapper h3 {
+  margin-top: 50px;
+}
+
+.skills_textwrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills_textwrapper li::marker {
+  color: #c09fe0;
+}
+.skills_textwrapper li {
+  text-decoration: underline;
+  text-decoration-color: #c09fe0;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  margin: 5px 0;
+}
+
+.skills_textwrapper ul {
+  margin-left: -20px;
+}
+
+/* Section three */
 
 #section_three {
-  /* background-color: #495778; */
-  background-color: #564964;
-  background-image: url(wave_three.svg);
+  background-image: url(svg/wave_three.svg);
   background-size: cover;
+  padding: 150px 0;
+  position: relative;
 }
 
-.panel {
-  margin-top: -100px;
-  height: 100vh;
-  width: 100vw;
+.logo_container {
+  width: 300px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 30px;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+.logo_container button {
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  cursor: pointer;
+}
+
+.logo_container .linkedin:hover {
+  width: 99px;
+}
+.logo_container .github:hover {
+  width: 102px;
+}
+.logo_container .mail:hover {
+  width: 100px;
+  text-align: center;
+  background-image: none;
+  /* width: 100px; */
+  height: 100px;
+  background-color: transparent;
+  color: #c09fe0;
+  transition: 0.3s;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.5rem;
+}
+.logo_container button:hover {
+  background-image: none;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  color: #c09fe0;
+  transition: 0.3s;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+.logo_container .github {
+  background-image: url(svg/github_logo.svg);
+  background-size: cover;
+  display: block;
+  width: 102px;
+  height: 100px;
+  /* transition: 0.3s; */
+}
+.logo_container .instagram {
+  background-image: url(svg/instagram_logo.svg);
+  background-size: cover;
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.logo_container .linkedin {
+  background-image: url(svg/linkedin_logo.svg);
+  background-size: cover;
+  display: block;
+  width: 99px;
+  height: 100px;
+}
+.logo_container .mail {
+  background-image: url(svg/mail_logo.svg);
+  background-size: cover;
+  background-position: center;
+  display: block;
+  width: 100px;
+  height: 91px;
+  cursor: pointer;
+  color: transparent;
+}
+
+.logo_container .mail p {
+  visibility: hidden;
+}
+
+/* Mediaqueries */
+
+@media (min-width: 800px) {
+  #section_one .work_wrapper {
+    width: 650px;
+  }
+}
+
+@media (min-width: 1100px) {
+  #section_one .work_wrapper {
+    width: 1000px;
+  }
 }

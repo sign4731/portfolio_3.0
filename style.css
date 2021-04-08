@@ -3,7 +3,7 @@
 * {
   margin: 0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 h1 {
@@ -133,6 +133,8 @@ a::after {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  opacity: 0;
+  transition: 0.3s;
 }
 
 .overlay h3,
@@ -155,6 +157,11 @@ a::after {
 
 .overlay button:hover {
   background-color: #c09fe0;
+  transition: 0.3s;
+}
+
+#section_one article:hover .overlay {
+  opacity: 1;
   transition: 0.3s;
 }
 
@@ -198,8 +205,8 @@ a::after {
   color: #c09fe0;
 }
 .skills_textwrapper li {
-  text-decoration: underline;
-  text-decoration-color: #c09fe0;
+  text-decoration: underline 1.5px #c09fe0;
+  /* text-decoration-color: #c09fe0; */
   color: white;
   font-family: "Nunito", sans-serif;
   margin: 5px 0;
@@ -219,12 +226,14 @@ a::after {
 }
 
 .logo_container {
-  width: 300px;
-  display: grid;
+  /* width: 300px; */
+  /* display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
-  grid-gap: 30px;
-  justify-items: center;
+  grid-gap: 30px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -233,6 +242,7 @@ a::after {
   background-color: transparent;
   color: transparent;
   cursor: pointer;
+  margin: 20px;
 }
 
 .logo_container .linkedin:hover {
@@ -242,16 +252,18 @@ a::after {
   width: 102px;
 }
 .logo_container .mail:hover {
-  width: 100px;
+  /* width: 100px; */
   text-align: center;
   background-image: none;
   /* width: 100px; */
-  height: 100px;
-  background-color: transparent;
+  /* height: 100px; */
+  /* background-color: transparent; */
   color: #c09fe0;
   transition: 0.3s;
   font-family: "Nunito", sans-serif;
-  font-size: 0.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
 }
 .logo_container button:hover {
   background-image: none;
@@ -261,7 +273,7 @@ a::after {
   color: #c09fe0;
   transition: 0.3s;
   font-family: "Nunito", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .logo_container .github {
@@ -291,10 +303,11 @@ a::after {
   background-size: cover;
   background-position: center;
   display: block;
-  width: 100px;
-  height: 91px;
+  width: 212px;
+  height: 100px;
   cursor: pointer;
   color: transparent;
+  margin: 20px;
 }
 
 .logo_container .mail p {
